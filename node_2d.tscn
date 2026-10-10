@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://byemvmmy6lgmf" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://b4cut5ydwjcbl" path="res://hund_transparent.png" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://cbx5xm2dcrgv2" path="res://download.png" id="3_d21ai"]
 [ext_resource type="AudioStream" uid="uid://de82pjfql1evx" path="res://420449__mrthenoronha__barking-2.wav" id="3_epypp"]
+[ext_resource type="AudioStream" uid="uid://5pguhpdhpsfe" path="res://350593__austinxyz__chihuahua-puppy-whine.wav" id="4_kdubu"]
+[ext_resource type="AudioStream" uid="uid://xsm7ack3l5ky" path="res://427127__caap__82-perritogimoteafeliz.wav" id="5_d21ai"]
+[ext_resource type="AudioStream" uid="uid://b0iie46ir6m15" path="res://827539__qubodup__dog-long-greeting-yelp.wav" id="6_rj586"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("2_0e48y")
@@ -64,6 +68,14 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d21ai")
+}],
+"loop": 1,
+"name": &"sover",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
@@ -74,10 +86,10 @@ script = ExtResource("1_0e48y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=99968712]
 position = Vector2(103.99999, 110)
-scale = Vector2(0.59, 0.6)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_3tm4w")
-animation = &"idle"
-frame_progress = 0.52426046
+animation = &"sover"
+frame_progress = 0.40754288
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2034710689]
 
@@ -85,5 +97,14 @@ frame_progress = 0.52426046
 position = Vector2(96.5, 93)
 shape = SubResource("RectangleShape2D_d21ai")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=160500326]
+[node name="skäll" type="AudioStreamPlayer" parent="." unique_id=160500326]
 stream = ExtResource("3_epypp")
+
+[node name="gnäll 1 sek" type="AudioStreamPlayer" parent="." unique_id=2004588142]
+stream = ExtResource("4_kdubu")
+
+[node name="gnäll 2 sek" type="AudioStreamPlayer" parent="." unique_id=422571849]
+stream = ExtResource("5_d21ai")
+
+[node name="gnäll 3 sek" type="AudioStreamPlayer" parent="." unique_id=2101036408]
+stream = ExtResource("6_rj586")
