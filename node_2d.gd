@@ -7,6 +7,7 @@ var window_size = Vector2(200,200)
 
 var idle_timer = 0.0
 var is_idling = false
+var mouse_left = false
 
 var is_dragging = false
 var drag_offset = Vector2()
@@ -16,6 +17,9 @@ var drag_offset = Vector2()
 
 func _on_area_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if mouse_left == false:
+			$AudioStreamPlayer.play()
+			mouse_left = true
 		if event.pressed:
 			is_dragging = true
 			var mouse_pos = Vector2(DisplayServer.mouse_get_position())
